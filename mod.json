@@ -12,7 +12,8 @@
 	"developers": ["ata", "relative"],
 	"description": "Redirects Newgrounds sound downloads.",
 	"links": {
-		"source": "https://github.com/at4pm/NGProxyRevival"
+		"source": "https://github.com/at4pm/NGProxyRevival",
+		"community": "https://discord.gg/abESXwT6rK"
 	},
 	"settings": {
 		"server": {
