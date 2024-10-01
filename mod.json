@@ -19,9 +19,8 @@
 		"server": {
 			"type": "string",
 			"name": "Server URL",
-			"description": "This is the URL of the proxy server. See the GitHub repo to self host.\n\n<cr>DO NOT</c> have the protocol in the URI. The mod adds it in.\n\n<cr>Your server must have a SSL certificate for this to work!</c>",
-			"default": "mewo.lol",
-			"requires-restart": true
+			"description": "This is the URL of the proxy server. See the GitHub repo to self host.\n\n<cr>Your server must have a SSL certificate for this to work!</c>",
+			"default": "mewo.lol"
 		}
 	},
 	"tags": ["performance", "online"]

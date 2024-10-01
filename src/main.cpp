@@ -17,15 +17,20 @@ void proxySend(CCHttpClient* self, CCHttpRequest* req) {
     auto uri = Mod::get()->getSettingValue<std::string>("server");
     
     std::string newUri = req->getUrl();
-    newUri = str_replace(newUri, "audio.ngfiles.com", uri);
-    newUri = str_replace(newUri, "http://", "https://");
-        
+
+    if (uri.find("https://") != std::string::npos) {
+        newUri = str_replace(newUri, "http://audio.ngfiles.com", uri);
+    } else {
+        newUri = str_replace(newUri, "audio.ngfiles.com", uri);
+        newUri = str_replace(newUri, "http://", "https://");
+    }
+
     req->setUrl(newUri.c_str());
     self->send(req);
 }
 
 $execute {
-    Mod::get()->hook(
+    auto res = Mod::get()->hook(
         reinterpret_cast<void*>(
 			geode::addresser::getNonVirtual(&cocos2d::extension::CCHttpClient::send)
         ),

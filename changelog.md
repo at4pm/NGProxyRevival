@@ -3,6 +3,7 @@
 - Add mod tags
 - Actual credit for relativemodder (sorry!)
 - Extend custom uri description for clarification
+- Fix double "https://" (thanks hiimjustin000)
 - Bump Geode version
 - Fix custom host config (server)
 
