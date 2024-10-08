@@ -16,7 +16,7 @@
 		"community": "https://discord.gg/abESXwT6rK"
 	},
 	"settings": {
-		"server": {
+		"serverr": {
 			"type": "string",
 			"name": "Server URL",
 			"description": "This is the URL of the proxy server. See the GitHub repo to self host.\n\n<cr>Your server must have a SSL certificate for this to work!</c>",
