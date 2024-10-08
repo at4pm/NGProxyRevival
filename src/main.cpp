@@ -14,7 +14,7 @@ std::string str_replace(std::string string, std::string toReplace, std::string r
 }
 
 void proxySend(CCHttpClient* self, CCHttpRequest* req) {
-    auto uri = Mod::get()->getSettingValue<std::string>("server");
+    auto uri = Mod::get()->getSettingValue<std::string>("serverr");
     
     std::string newUri = req->getUrl();
 
