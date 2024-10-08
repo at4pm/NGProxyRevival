@@ -13,29 +13,20 @@ std::string str_replace(std::string string, std::string toReplace, std::string r
     return string;
 }
 
-void proxySend(CCHttpClient* self, CCHttpRequest* req) {
-    auto uri = Mod::get()->getSettingValue<std::string>("server");
-    
-    std::string newUri = req->getUrl();
+class $modify(CCHttpClient) {
+    void send(CCHttpRequest* req) {
+        auto serverUrl = Mod::get()->getSettingValue<std::string>("serverr");
 
-    if (uri.find("https://") != std::string::npos) {
-        newUri = str_replace(newUri, "http://audio.ngfiles.com", uri);
-    } else {
-        newUri = str_replace(newUri, "audio.ngfiles.com", uri);
-        newUri = str_replace(newUri, "http://", "https://");
+        std::string newUrl = req->getUrl();
+
+        if (serverUrl.find("https://") != std::string::npos) {
+            newUrl = str_replace(newUrl, "https://audio.ngfiles.com", serverUrl);
+        } else {
+            newUrl = str_replace(newUrl, "audio.ngfiles.com", serverUrl);
+            newUrl = str_replace(newUrl, "audio.ngfiles.com", serverUrl);
+        }
+
+        req->setUrl(newUrl.c_str());
+        return CCHttpClient::send(req);
     }
-
-    req->setUrl(newUri.c_str());
-    self->send(req);
-}
-
-$execute {
-    auto res = Mod::get()->hook(
-        reinterpret_cast<void*>(
-			geode::addresser::getNonVirtual(&cocos2d::extension::CCHttpClient::send)
-        ),
-        &proxySend,
-        "cocos2d::extension::CCHttpClient::send",
-        tulip::hook::TulipConvention::Thiscall
-    );
-}
+};

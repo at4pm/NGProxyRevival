@@ -8,7 +8,7 @@
 	},
 	"id": "ata.ng_proxy_revived",
 	"name": "Newgrounds Proxy Revival",
-	"version": "v1.0.1",
+	"version": "v1.1.0",
 	"developers": ["ata", "relativemodder"],
 	"description": "Redirects Newgrounds sound downloads.",
 	"links": {
@@ -16,11 +16,11 @@
 		"community": "https://discord.gg/abESXwT6rK"
 	},
 	"settings": {
-		"server": {
+		"serverr": {
 			"type": "string",
 			"name": "Server URL",
 			"description": "This is the URL of the proxy server. See the GitHub repo to self host.\n\n<cr>Your server must have a SSL certificate for this to work!</c>",
-			"default": "mewo.lol"
+			"default": "mewo.lol/api/songs"
 		}
 	},
 	"tags": ["performance", "online"]
