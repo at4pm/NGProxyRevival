@@ -8,7 +8,7 @@
 	},
 	"id": "ata.ng_proxy_revived",
 	"name": "Newgrounds Proxy Revival",
-	"version": "v1.0.2",
+	"version": "v1.0.3",
 	"developers": ["ata", "relativemodder"],
 	"description": "Redirects Newgrounds sound downloads.",
 	"links": {
