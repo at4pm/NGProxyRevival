@@ -1,3 +1,6 @@
+# 1.1.1
+- 2.2074 support
+
 # 1.1.0
 - Stop using manual hooks (big thanks to prevter and smjs)
 
